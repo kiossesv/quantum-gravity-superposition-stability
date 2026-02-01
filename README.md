@@ -100,6 +100,8 @@ A noiseless reference case establishes:
 
 This baseline is **necessary but not sufficient**.
 
+Due to the use of FFT-based split-operator methods with periodic boundary conditions, uniform gravitational acceleration leads to linear momentum drift. All deterministic benchmarks are therefore restricted to times $t < t_{max} \sim \frac{\pi \hbar N}{m g_max L}$, ensuring spectral validity and preventing momentum aliasing.
+
 ### Stochastic Branch Weights
 
 Controlled noise is introduced while preserving normalization.
@@ -143,10 +145,10 @@ quantum-gravity-superposition-stability/
 ├── metrics.py                   # stability diagnostics
 ├── analysis.py                  # statistical post-processing
 │
-├── benchmarks/
-│   ├── deterministic_baseline.py
-│   ├── stochastic_weights.py
-│   └── monte_carlo_stability.py
+│
+├── deterministic_baseline.py       # benchmark 1
+├── stochastic_weights.py           # benchmark 2
+├── monte_carlo_stability.py        # benchmark 3
 │
 └── README.md
 
