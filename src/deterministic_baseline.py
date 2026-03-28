@@ -35,10 +35,10 @@ times = np.arange(n_steps) * dt
 
 
 # --- maximum safe simulation time ---
-alpha = 0.4                   # conservative safety factor
+safe_f= 0.4                   # conservative safety factor
 g_max = np.max(g_values)      # worst-case gravity
 
-t_max_safe = alpha * np.pi * hbar * N / (m * g_max * L)
+t_max_safe = safe_f * np.pi * hbar * N / (m * g_max * L)
 if n_steps * dt > t_max_safe:
     print("WARNING: Simulation exceeds FFT spectral validity time")
 
@@ -69,6 +69,7 @@ psi_eff_t = psi_eff_t['psi']
 x_eff = np.array([expectation_x(psi, x) for psi in psi_eff_t])
 
 # --- plot ---
+
 plt.figure()
 plt.plot(times, x_branch, label="Branch-resolved")
 plt.plot(times, x_eff, "--", label="Effective")
@@ -76,5 +77,8 @@ plt.xlabel("Time")
 plt.ylabel(r"$\langle x \rangle$")
 plt.legend()
 plt.title("Deterministic Baseline: Branch vs Effective Gravity")
-plt.show()
+plt.tight_layout()
+plt.savefig("../figures/Figure_deterministic.png")
+plt.close()
+
 
