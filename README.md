@@ -21,12 +21,15 @@ The central goal is to determine **when an effective gravitational description r
 This repository is part of a **three-project research program** studying gravitational fields in quantum superposition.
 
 - [Project 1: quantum-gravity-superposition-dynamics](https://github.com/kiossesv/quantum-gravity-superposition-dynamics)
+
 Numerically stable solver for branch-resolved quantum dynamics in superposed gravitational fields.
 
 - [Project 2: quantum-gravity-superposition-stability](https://github.com/kiossesv/quantum-gravity-superposition-stability) (this repository)
+
 Statistical stability analysis of effective gravitational models.
 
 - [Project 3: quantum-gravity-superposition-sciml](https://github.com/kiossesv/quantum-gravity-superposition-sciml) (planned)
+
 Physics-informed machine learning for predicting stability regimes of effective gravity.
 
 ## Physical Model
@@ -65,7 +68,7 @@ The resulting effective evolution is compared with the branch-resolved reference
 ### Stability Diagnostics
 The primary observable used to compare the two descriptions is $\langle \hat{x}(t) \rangle$.
 
-Trajectory disagreement is quantified using the RMS deviation $\Delta x_{RMS} = \left( \frac{1}{T}\int_0^T (\langle x(t) \rangle_{eff}} - \langle x(t) \rangle_{ref})^2 dt \right)^{1/2}$.
+Trajectory disagreement is quantified using the RMS deviation $\Delta x_{RMS} = \left( \frac{1}{T} \int_0^T (\langle x(t) \rangle_{\text{eff}} - \langle x(t) \rangle_{\text{ref}})^2 dt \right)^{1/2}$.
 
 An effective model is considered **unstable** when $\Delta x_{RMS} > \Delta x_{\text{crit}}$.
 
