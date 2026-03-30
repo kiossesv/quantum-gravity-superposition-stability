@@ -141,37 +141,48 @@ quantum-gravity-superposition-stability/
 └── README.md
 ```
 
-## Reproducibility Instructions
-### Running the Simulations
+## Benchmarks
 
-**Deterministic benchmark**
 
- `python deterministic_baseline.py`
+ `deterministic_baseline.py`
  
-Computes the deterministic baseline by evolving the system under branch-resolved gravitational fields and comparing it with the corresponding effective gravitational model.
+**Purpose**
+
+Establishes a noiseless reference by comparing branch-resolved dynamics with the corresponding effective gravitational model.
+
+**Output**
+
+Trajectory comparison of $\langle x(t) \rangle$ showing agreement between branch-resolved and effective evolution in the deterministic limit.
 
 ![Deterministic baseline](figures/Figure_deterministic.png)
 
-Comparison of the expectation value $\langle x(t) \rangle$ obtained from branch-resolved dynamics and the effective gravitational field, showing agreement in the noiseless reference case.
 
-
-**Stochastic branch perturbations**
 
 ` python stochastic_weights.py`
 
-Simulates Monte Carlo realizations of stochastic branch weights and compares branch-resolved dynamics with the corresponding effective gravitational model.
+**Purpose**
+
+Introduces stochastic fluctuations in the branch weights and compares branch-resolved dynamics with the resulting effective gravitational evolution.
+
+**Output**
+
+Realization-wise deviations $\Delta \langle x(t) \rangle$ illustrating how small fluctuations in effective acceleration accumulate over time.
 
 ![Stochastic deviations](figures/Figure_stochastics_weights_deviations.png)
 
-Each curve shows the deviation $\Delta \langle x(t) \rangle$ between branch-resolved and effective trajectories for one stochastic realization, illustrating the time-accumulation of small acceleration mismatches.
 
-**Full Monte-Carlo stability analysis**
 
 `python monte_carlo_stability.py`
 
-Computes RMS deviations and failure probability across ensembles.
+**Purpose**
 
+Performs a full Monte Carlo analysis to quantify the statistical stability of the effective gravitational model under stochastic branch uncertainty.
 
+**Output**
+
+Ensemble statistics of trajectory deviations used to identify robustness regimes and instability thresholds.
+
+(see **Scientific Results Preview** for resutls)
 
 ## Current Limitations
 The present implementation focuses on a minimal controlled model:
